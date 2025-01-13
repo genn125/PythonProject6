@@ -2,12 +2,14 @@
 # Задача "Изменять нельзя получать"
 
 class Vehicle:
-    __COLOR_VARIANTS=['красный', 'жёлтый', 'зеленый', 'белый']
+
+    __COLOR_VARIANTS = ['красный', 'жёлтый', 'зеленый', 'белый']
+
     def __init__(self, owner: str, __model: str, __color: str, __engine_power: int):
-         self.owner=owner             # владелец транспорта
-         self.__model=__model            # модель (марка) транспорта
-         self.__engine_power=__engine_power  # мощность двигателя
-         self.__color=__color                 # название цвета
+         self.owner = owner             # владелец транспорта
+         self.__model = __model            # модель (марка) транспорта
+         self.__engine_power = __engine_power  # мощность двигателя
+         self.__color = __color                 # название цвета
 # 1
     def get_model (self):
         return f'Модель: {self.__model}'
@@ -19,7 +21,7 @@ class Vehicle:
         return f'Цвет: {self.__color}'
 # 4
     def print_info (self):
-        print(f'{self.get_model()}\n{self.get_horsepower()}\n{self.get_color()}\nВладелец: {self.owner}')
+        print(f'{self.get_model()} \n{self.get_horsepower()} \n{self.get_color()} \nВладелец: {self.owner}')
 # 5
     def set_color (self, new_color :str):
         if new_color.lower() in (__color.lower() for __color in self.__COLOR_VARIANTS):
