@@ -1,23 +1,22 @@
 # 6.1 "Зачем нужно наследование"
 # Задача "Съедобное, несъедобное":
 
-
-
-
 class Animal:
 
-    alive = True                  # живой
-    fed = False                   # накормленный (нет)
     def __init__(self, name):
         self.name=name
+        self.fed = False                      # накормленный (нет)
+        self.alive = True                     # живой
 
     def eat(self, food):
         if food.edible:
             print(f"{self.name} съел {food.name}")
-            self.fed = True           # накормленный (да)
+            self.fed = True                    # накормленный (да)
+
         else:
             print(f"{self.name} не стал есть {food.name}")
-            self.alive = False
+            self.alive = False                  # живой (нет)
+
 class Mammal(Animal):
     pass
 class Predator(Animal):
@@ -25,7 +24,7 @@ class Predator(Animal):
 
 class Plant:
 
-    edible = False                 # съедобность (нет)
+    edible = False                               # съедобность (нет)
     def __init__(self, name):
         self.name=name
 
@@ -35,7 +34,7 @@ class Fruit(Plant):
 
     def __init__(self, name):
         Plant.__init__ (self, name)
-        self.edible = True            # съедобность (да), переопределение атрибута
+        self.edible = True                          # съедобность (да), переопределение атрибута
 
 a1 = Predator('Мой хищник')
 a2 = Mammal('Чебурашка')
