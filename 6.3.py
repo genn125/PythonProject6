@@ -1,9 +1,7 @@
 # Множественное наследование
 # Задача "Ошибка эволюции
 
-
 from random import randint as ran
-
 #1
 class Animal:
     _DEGREE_OF_DANGER = 0        # степень опасности существа
@@ -28,35 +26,27 @@ class Animal:
             print("4 >    Sorry, i'm peaceful :)")        # Извините, я настроен миролюбиво
         else:
             print("4 >    Be careful, i'm attacking you 0_0")       # Будь осторожен, я атакую тебя
-
-
 #1,4
     def speak(self):       # выводит строку со звуком sound
         print(self.sound)
-
 #2
 class Bird (Animal):
-
     beak = True                      # наличие клюва
+
     def lay_eggs(self):
         print(f'8 >    Here are(is) {ran(1, 4)} eggs for you')
-
 #3
 class AquaticAnimal(Animal):
     _DEGREE_OF_DANGER = 3            # степень опасности существа
 
     def dive_in(self, dz):           # погружение
         self._cords[2] -= self.speed * dz // 2
-
 #4
 class PoisonousAnimal(Animal):
     _DEGREE_OF_DANGER = 8               # степень опасности существа
-
 #5
 class Duckbill(PoisonousAnimal, AquaticAnimal,Bird ):
-    sound = "3 >    Click-click-click"  # утконос
-
-
+    sound = "3 >    Click-click-click"
 
 db = Duckbill(10)
 
