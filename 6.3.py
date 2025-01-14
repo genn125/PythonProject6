@@ -2,6 +2,7 @@
 # Задача "Ошибка эволюции
 
 from random import randint as ran
+
 #1
 class Animal:
     _DEGREE_OF_DANGER = 0        # степень опасности существа
