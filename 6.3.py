@@ -15,7 +15,7 @@ class Animal:
         self._cords = [dx * self.speed, dy * self.speed, dz * self.speed]
         if self._cords[2] < 0:
             print("5 >    It's too deep, i can't dive :(  # Здесь слишком глубоко, я не могу нырнуть")
-#1,2
+# 1,2
     def get_cords(self):  # координаты
         print(f'6(7) > X: {self._cords[0]}, Y: {self._cords[1]}, Z: {self._cords[2]}')
 #1,3

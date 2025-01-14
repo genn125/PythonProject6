@@ -14,7 +14,6 @@ class Game(arcade.Window):
 
 
 
-
 if __name__ == '__main__':
 
     window = Game(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
