@@ -14,8 +14,6 @@ class Animal:
     def move(self, dx, dy, dz):    # Движение
         self._cords = [dx * self.speed, dy * self.speed, dz * self.speed]
         if self._cords[2] < 0:
-            pass
-        else:
             print("5 >    It's too deep, i can't dive :(  # Здесь слишком глубоко, я не могу нырнуть")
 #1,2
     def get_cords(self):  # координаты
