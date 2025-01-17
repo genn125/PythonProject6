@@ -1,5 +1,9 @@
 # 6.4 Наследование классов (hard)
 # Задание "Они все так похожи":
+import math
+
+
+
 
 class Figure:
     sides_count = 0
@@ -12,21 +16,15 @@ class Figure:
     def get_color(self):   # возвращает список RGB цветов
         return self.__color
 
-
-
     def __is_valid_color(self, r, g, b):
         return all(0 <= i <= 255 for i in (r, g, b))
-
-
 
     def set_color(self, r, g, b):
         if self.__is_valid_color(r, g, b):
             self.__color = r,g,b
 
-
     def __is_valid_sides(self, *kwarg):
         return len(kwarg) == self.sides_count and all(isinstance(x, int) and x > 0 for x in kwarg)
-
 
     def get_sides(self):   # Стороны
         return self.sides
@@ -38,15 +36,16 @@ class Figure:
         if self.__is_valid_sides(*new_sides):
             self.sides = list(new_sides)
 
-
 class Circle(Figure):
     sides_count = 1
 
     def __radius(self):
-       return self.__radius == self.__len__() / (2 * pi)
+        return self.__radius == self.__len__() / (2 * 3.14)
 
-    def get_square(self):
-       return (self.sides**2)/(4 * pi)
+
+
+    def get_square(self):  # площадь круга
+       return (sides**2)/(4 * 3.14)
 
 class Triangle(Figure):
     sides_count = 3
@@ -54,9 +53,6 @@ class Triangle(Figure):
     def get_square(self):
         p = sum(self.get_sides()) / 2   # Полу-периметр для формулы Герона
         return sqrt(p * (p - self.get_sides()[0]) * (p - self.get_sides()[1]) * (p - self.get_sides()[2]))
-
-
-
 
 class Cube(Figure):
     sides_count = 12
@@ -66,8 +62,7 @@ class Cube(Figure):
         self.sides = [sides] * self.sides_count
 
     def get_volume(self):
-        return self.sides[0] ** 3
-
+        return self.sides[0] ** 3   # объём куба
 
 circle1 = Circle((200, 200, 100), 10)  # Цвет, стороны
 cube1 = Cube((222, 35, 130), 6)
@@ -89,8 +84,8 @@ print(circle1.get_sides())
 # Проверка периметра (круга), это и есть длина:
 
 print(len(circle1))
-
+# print(Circle.__radius)
 # Проверка объёма (куба):
 
-print(cube1.get_volume())
+print('Объем', cube1.get_volume())
 
